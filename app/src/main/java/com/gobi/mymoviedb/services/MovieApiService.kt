@@ -9,10 +9,10 @@ import retrofit2.http.Query
 
 interface MovieApiService {
 
-  @GET("/movie/now_playing")
+  @GET("/3/movie/now_playing")
   suspend fun getNowPlayingMovies(
-    @Header("Authorization") accessToken: String,
+    @Header("Authorization") apiKey: String,
     @Query("language") language: String,
     @Query("page") page: Int
-  ): Response<List<Movie>>
+  ): Response<MovieListResponse>
 }
